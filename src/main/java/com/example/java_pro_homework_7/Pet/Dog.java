@@ -1,48 +1,43 @@
 package com.example.java_pro_homework_7.Pet;
 
-public class Dog extends Animals {
+public class Dog extends Animal {
+
+    public static int dogCounter;
 
     public Dog(String name, String color, String breed) {
         super(name, color, breed);
-        totalDog();
-
-
+        limitDistanceSwim = 10;
+        limitDistanceRun = 500;
+        getDogCounter();
+        dogCounter++;
     }
 
+    static public int getDogCounter() {
 
-    static public int totalDog;
-    static public int totalDog() {
-        totalDog++;
-        return totalDog;
-    }
-
-    @Override
-    public int getDistanceRun() {
-        return super.getDistanceRun();
-    }
-
-    @Override
-    public int getGetDistanceSwim() {
-        return super.getGetDistanceSwim();
-    }
-
-    @Override
-    public void setGetDistanceSwim(int distanceSwim) {
-        super.setGetDistanceSwim(distanceSwim);
-    }
-
-    @Override
-    public int getAmountAnimal() {
-        return super.getAmountAnimal();
-    }
-
-    @Override
-    public void setAmountAnimal(int amountAnimal) {
-        super.setAmountAnimal(amountAnimal);
+        return dogCounter;
     }
 
     @Override
     public String toString() {
         return super.toString();
+    }
+
+    @Override
+    public void swim(int distanceSwim) {
+        if (distanceSwim <= limitDistanceSwim) {
+            super.swim(distanceSwim);
+        } else {
+            System.out.println("Нажаль, " + name + " здатен пропливти лише " + limitDistanceSwim + " м");
+        }
+
+    }
+
+    @Override
+    public void run(int distanceRun) {
+        if (distanceRun <= limitDistanceRun) {
+            super.swim(distanceRun);
+        } else {
+            System.out.println("Нажаль, " + name + " здатен пробігти лише " + limitDistanceRun + " м");
+        }
     }
 }
