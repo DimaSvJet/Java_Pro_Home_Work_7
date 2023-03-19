@@ -2,7 +2,7 @@ package com.example.java_pro_homework_7.Pet;
 
 public class Cat extends Animal {
 
-    public static int catsCounter;
+    private static int catsCounter;
 
 
     public Cat(String name, String color, String breed) {
@@ -10,7 +10,6 @@ public class Cat extends Animal {
         limitDistanceSwim = 0;
         limitDistanceRun = 200;
         catsCounter++;
-        getCatsCounter();
 
     }
 
@@ -21,16 +20,6 @@ public class Cat extends Animal {
     }
 
     public void swim(int distance) {
-        setDistanceSwim(limitDistanceSwim);
-    }
-
-    @Override
-    protected void setDistanceSwim(int distanceSwim) {
-        if (distanceSwim < limitDistanceSwim) {
-            this.distanceSwim = limitDistanceSwim;
-        } else {
-            this.distanceSwim = distanceSwim;
-        }
         System.out.println(name + ", не плаває! Коти не плавають!");
     }
 

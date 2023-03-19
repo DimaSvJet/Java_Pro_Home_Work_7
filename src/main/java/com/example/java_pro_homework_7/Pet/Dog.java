@@ -2,24 +2,18 @@ package com.example.java_pro_homework_7.Pet;
 
 public class Dog extends Animal {
 
-    public static int dogCounter;
+    private static int dogCounter;
 
     public Dog(String name, String color, String breed) {
         super(name, color, breed);
         limitDistanceSwim = 10;
         limitDistanceRun = 500;
-        getDogCounter();
         dogCounter++;
     }
 
-    static public int getDogCounter() {
+     public static int getDogCounter() {
 
         return dogCounter;
-    }
-
-    @Override
-    public String toString() {
-        return super.toString();
     }
 
     @Override

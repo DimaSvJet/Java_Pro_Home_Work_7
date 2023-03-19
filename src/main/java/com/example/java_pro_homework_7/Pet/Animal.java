@@ -2,6 +2,7 @@ package com.example.java_pro_homework_7.Pet;
 
 public abstract class Animal {
 
+    static int animalCounter;
     String name;
     String color;
     String breed;
@@ -9,7 +10,6 @@ public abstract class Animal {
     int limitDistanceSwim;
     protected int distanceRun;
     protected int distanceSwim;
-    private int animalCounter;
 
     public Animal(String name, String color, String breed) {
         this.name = name;
@@ -25,8 +25,6 @@ public abstract class Animal {
     }
 
     protected void setDistanceRun(int distanceRun) {
-
-            System.out.println(name + ", пробіг дистанцію " + distanceRun + " м.");
         }
 
     public int getDistanceSwim() {
@@ -34,24 +32,20 @@ public abstract class Animal {
     }
 
     protected void setDistanceSwim(int distanceSwim) {
-        System.out.println(name + ", проплив дистанцію "+distanceSwim+" м.");
+
     }
 
-    public int getAnimalCounter() {
+    static int getAnimalCounter() {
         return animalCounter;
     }
 
-    public void setAnimalCounter(int animalCounter) {
-        this.animalCounter = animalCounter;
-    }
-
     public void swim (int distanceSwim) {
-
-        setDistanceSwim(distanceSwim);
+        System.out.println(name + ", проплив дистанцію "+distanceSwim+" м.");
     }
 
     public void run (int distanceRun){
-        setDistanceRun(distanceRun);
+        System.out.println(name + ", пробіг дистанцію " + distanceRun + " м.");
+
     }
 
     @Override

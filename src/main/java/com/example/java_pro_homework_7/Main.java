@@ -28,9 +28,9 @@ public class Main {
 
 
 
-        System.out.println("Total Cats: "+Cat.catsCounter);
-        System.out.println("Total Dogs: "+Dog.dogCounter);
-        System.out.println("Total Animals: "+(Cat.catsCounter +Dog.dogCounter));
+        System.out.println("Total Cats: "+Cat.getCatsCounter());
+        System.out.println("Total Dogs: "+Dog.getDogCounter());
+        System.out.println("Total Animals: "+(Cat.getCatsCounter()+Dog.getDogCounter()));
 
 
 
