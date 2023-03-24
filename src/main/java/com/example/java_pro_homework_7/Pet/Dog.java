@@ -6,32 +6,32 @@ public class Dog extends Animal {
 
     public Dog(String name, String color, String breed) {
         super(name, color, breed);
-        limitDistanceSwim = 10;
-        limitDistanceRun = 500;
+        this.setLimitDistanceSwim(10);
+        this.setLimitDistanceRun(500);
         dogCounter++;
     }
 
-     public static int getDogCounter() {
+    public static int getDogCounter() {
 
         return dogCounter;
     }
 
     @Override
     public void swim(int distanceSwim) {
-        if (distanceSwim <= limitDistanceSwim) {
+        if (distanceSwim <= getLimitDistanceSwim()) {
             super.swim(distanceSwim);
         } else {
-            System.out.println("Нажаль, " + name + " здатен пропливти лише " + limitDistanceSwim + " м");
+            System.out.println("Нажаль, " + getName() + " здатен пропливти лише " + getLimitDistanceSwim() + " м");
         }
 
     }
 
     @Override
     public void run(int distanceRun) {
-        if (distanceRun <= limitDistanceRun) {
+        if (distanceRun <= getLimitDistanceRun()) {
             super.swim(distanceRun);
         } else {
-            System.out.println("Нажаль, " + name + " здатен пробігти лише " + limitDistanceRun + " м");
+            System.out.println("Нажаль, " + getName() + " здатен пробігти лише " + getLimitDistanceRun() + " м");
         }
     }
 }

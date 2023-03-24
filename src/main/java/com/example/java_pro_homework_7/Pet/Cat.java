@@ -7,28 +7,26 @@ public class Cat extends Animal {
 
     public Cat(String name, String color, String breed) {
         super(name, color, breed);
-        limitDistanceSwim = 0;
-        limitDistanceRun = 200;
+        this.setLimitDistanceRun(200);
         catsCounter++;
-
     }
-
 
     public static int getCatsCounter() {
 
         return catsCounter;
     }
 
+
     public void swim(int distance) {
-        System.out.println(name + ", не плаває! Коти не плавають!");
+        System.out.println(getName() + ", не плаває! Коти не плавають!");
     }
 
     @Override
     public void run(int distanceRun) {
-        if (distanceRun <= limitDistanceRun) {
+        if (distanceRun <= getLimitDistanceRun()) {
             super.swim(distanceRun);
         } else {
-            System.out.println("Нажаль, " + name + " здатен пробігти лише " + limitDistanceRun + " м");
+            System.out.println("Нажаль, " + getName() + " здатен пробігти лише " + getLimitDistanceRun() + " м");
         }
     }
 }
